@@ -1,7 +1,7 @@
 import { Injectable, LoggerService, Scope } from '@nestjs/common';
 import winston, { createLogger, format, transports } from 'winston';
 import 'winston-daily-rotate-file'; 
-import * as CONSTANTS from '../constants/app.constants'
+import * as CONSTANTS from '../../constants/app.constants'
 import * as path from 'path'
 @Injectable({ scope: Scope.TRANSIENT })
 export class MyLogger implements LoggerService {

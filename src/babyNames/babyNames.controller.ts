@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, Param, Put, Delete, Query, UseFilters, NotFoundException, Logger } from '@nestjs/common';
-import { BabyNamesService } from './baby-names.service';
-import { BabyName } from './baby-name.entity';
-import { CreateBabyNameDto } from './baby-name.dto';
+import { BabyNamesService } from './babyNames.service';
+import { BabyName } from './babyName.entity';
+import { CreateBabyNameDto } from './babyName.dto';
 // import { UpdateBabyNameDto } from './dto/update-baby-name.dto';
 // import { HttpExceptionFilter } from '../shared/http-exception.filter'; 
 

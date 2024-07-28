@@ -1,7 +1,7 @@
 import { Injectable ,Logger} from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { BabyName, BabyNameDocument } from './baby-name.entity'; 
+import { BabyName, BabyNameDocument } from './babyName.entity'; 
 import * as fs from 'fs'
 // import { CreateBabyNameDto } from './dto/create-baby-name.dto';
 // import { UpdateBabyNameDto } from './dto/update-baby-name.dto';

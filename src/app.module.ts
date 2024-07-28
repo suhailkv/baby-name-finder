@@ -1,11 +1,11 @@
 import { MiddlewareConsumer, Module,NestModule } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { BabyNamesModule } from './baby-names/baby-names.module';
+import { BabyNamesModule } from './babyNames/babyNames.module';
 import { UsersModule } from './users/users.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { LoggerMiddleware } from './middleware/logger.middleware';
-import { LoggerModule } from './shared/logger.module';
+import { LoggerModule } from './shared/logger/logger.module';
 import { ConfigModule } from '@nestjs/config';
 import { DatabaseModule } from './database/database.module';
 @Module({

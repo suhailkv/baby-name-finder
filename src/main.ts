@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { MyLogger } from './shared/logger.service'; 
+import { MyLogger } from './shared/logger/logger.service'; 
 import { Logger } from 'winston';
 
 async function bootstrap() {
