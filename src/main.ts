@@ -1,11 +1,23 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { MyLogger } from './shared/logger.service';
+import { MyLogger } from './shared/logger.service'; 
+import { Logger } from 'winston';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule,{
-    logger:new MyLogger
-  });
-  await app.listen(3000);
+// set up cluster later - production
+    const app = await NestFactory.create(AppModule);
+    const logger = await app
+        .resolve(MyLogger)
+        .catch(err => {
+            console.error('Error resolving logger:', err); 
+            return app.get(Logger);
+        });
+
+    app.useLogger(logger);
+
+    await app.listen(3000);
+    console.log('Server Started');
+  
 }
+
 bootstrap();

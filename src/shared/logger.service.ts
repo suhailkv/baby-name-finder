@@ -2,7 +2,7 @@ import { Injectable, LoggerService, Scope } from '@nestjs/common';
 import winston, { createLogger, format, transports } from 'winston';
 import 'winston-daily-rotate-file'; 
 import * as CONSTANTS from '../constants/app.constants'
-
+import * as path from 'path'
 @Injectable({ scope: Scope.TRANSIENT })
 export class MyLogger implements LoggerService {
     private logger: winston.Logger;
@@ -11,7 +11,7 @@ export class MyLogger implements LoggerService {
         this.logger = createLogger({
         transports: [
             new transports.DailyRotateFile({
-                filename: CONSTANTS.LOG_FILE_NAME,
+                filename: path.join('logs', CONSTANTS.LOG_FILE_NAME),
                 datePattern: 'YYYY-MM-DD',
                 zippedArchive: true,
                 maxSize: CONSTANTS.LOG_FILE_MAX_SIZE,
